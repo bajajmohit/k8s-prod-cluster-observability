@@ -1,0 +1,14 @@
+alertmanager:
+  enabled: true
+
+server:
+  service:
+    type: ClusterIP
+
+pushgateway:
+  enabled: false
+
+extraScrapeConfigs: |
+  - job_name: 'kubernetes-nodes'
+    kubernetes_sd_configs:
+      - role: node
